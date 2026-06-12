@@ -461,8 +461,8 @@ section { padding:100px 5%; }
 .about-credentials {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 28px 0;
+  gap: 8px;
+  margin-top: 16px;
 }
 .credential-item {
   display: flex;
@@ -1083,31 +1083,24 @@ section { padding:100px 5%; }
   margin-top: 24px;
 }
 .rev-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: var(--gold);
   border: none;
   color: var(--black);
-  font-size: 2.4rem;
-  width: 52px;
-  height: 52px;
+  font-size: 2.6rem;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .2s;
+  transition: background .2s;
   line-height: 1;
   padding: 0;
-  z-index: 10;
   font-weight: 900;
+  flex-shrink: 0;
 }
-.rev-arrow:hover {
-  background: var(--gold-light);
-  transform: translateY(-50%) scale(1.08);
-}
-.rev-prev { left: 0; }
-.rev-next { right: 0; }
+.rev-arrow:hover { background: var(--gold-light); }
 .reviews-dots {
   display: flex;
   gap: 10px;
@@ -1346,24 +1339,7 @@ footer {
       <p>I'm Miles — a dedicated personal trainer, semi-professional footballer, and proud father of two with a genuine passion for helping people become the best version of themselves.</p>
       <p>For over 4 years, I've worked closely with clients from all backgrounds — helping more than 150 people improve their fitness, lifestyle, confidence, and daily habits through structured training and consistent support.</p>
       <p>As both an athlete and family man, I understand the importance of balance, commitment, and long-term progress. My coaching goes beyond workouts — I focus on building sustainable routines, discipline, and a healthier mindset that fits into real life.</p>
-      <div class="about-credentials">
-        <div class="credential-item">
-          <span class="cred-tick">✓</span>
-          <span class="cred-text">Fully Insured</span>
-        </div>
-        <div class="credential-item">
-          <span class="cred-tick">✓</span>
-          <span class="cred-text">DBS Checked</span>
-        </div>
-        <div class="credential-item">
-          <span class="cred-tick">✓</span>
-          <span class="cred-text">Personal Training Qualified</span>
-        </div>
-        <div class="credential-item">
-          <span class="cred-tick">✓</span>
-          <span class="cred-text">Sports Science University Graduate</span>
-        </div>
-      </div>
+      
       <div class="about-stats">
         <div class="stat">
           <div class="stat-number">150+</div>
@@ -1406,6 +1382,24 @@ footer {
       <button class="slide-arrow slide-prev" onclick="changeSlide(-1)">&#8249;</button>
       <button class="slide-arrow slide-next" onclick="changeSlide(1)">&#8250;</button>
     </div>
+      <div class="about-credentials">
+        <div class="credential-item">
+          <span class="cred-tick">✓</span>
+          <span class="cred-text">Fully Insured</span>
+        </div>
+        <div class="credential-item">
+          <span class="cred-tick">✓</span>
+          <span class="cred-text">DBS Checked</span>
+        </div>
+        <div class="credential-item">
+          <span class="cred-tick">✓</span>
+          <span class="cred-text">Personal Training Qualified</span>
+        </div>
+        <div class="credential-item">
+          <span class="cred-tick">✓</span>
+          <span class="cred-text">Sports Science University Graduate</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1649,8 +1643,10 @@ footer {
     <div class="divider" style="margin:0 auto;"></div>
   </div>
   <div class="reviews-slideshow">
-    <div class="reviews-track">
-      <div class="review-slide active">
+    <div class="reviews-wrapper">
+      <button class="rev-arrow rev-prev" onclick="changeReview(-1)">&#8249;</button>
+      <div class="reviews-track">
+        <div class="review-slide active">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
       <p class="review-text">Miles is firm and kind — everything I needed in a personal trainer. He knows where to push me and how to get the best out of me. He helps me understand my bad habits and supports me to overcome them. Since working with Miles I've noticed real changes and developed sustainable habits to be the best me I can be. Plus I've found a new friend. If you're looking for a new you, I couldn't recommend anyone more. 10/10.</p>
@@ -1661,7 +1657,7 @@ footer {
           <div class="review-goal">Transformation · 1:1 PT
         </div>
       </div>
-      <div class="review-slide">
+        <div class="review-slide">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
       <p class="review-text">It's true what they say — you can't love anyone until you love yourself. I have been with Miles for over 12 months and in that time I started to love me a bit more, which resulted in me finding the love of my life. Now I have a wedding to get in shape for! I feel healthier, stronger and more confident and I'll never regret taking that first step. Trust the process! Thank you so much Miles for your constant support.</p>
@@ -1672,7 +1668,7 @@ footer {
           <div class="review-goal">Confidence & Transformation
         </div>
       </div>
-      <div class="review-slide">
+        <div class="review-slide">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
       <p class="review-text">The bootcamps are absolutely elite. The energy, the programming, the coaching — it's unlike anything I've done before. I'm fitter now than I was at 25. Highly, highly recommend Miles and The One % Society.</p>
@@ -1683,7 +1679,7 @@ footer {
           <div class="review-goal">Fat Loss · Bootcamp
         </div>
       </div>
-      <div class="review-slide">
+        <div class="review-slide">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
       <p class="review-text">I came in with zero confidence in the gym and left every session feeling unstoppable. The 1-2-1 coaching is incredible value — my technique is solid and I'm hitting PBs I never imagined possible. Miles genuinely cares about your progress.</p>
@@ -1694,7 +1690,7 @@ footer {
           <div class="review-goal">Strength · 1:1 PT
         </div>
       </div>
-      <div class="review-slide">
+        <div class="review-slide">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
       <p class="review-text">What sets Miles apart is that he genuinely cares about your long-term progress, not just the session. My mindset around training and eating has completely changed. The results speak for themselves — couldn't recommend him enough.</p>
@@ -1705,7 +1701,7 @@ footer {
           <div class="review-goal">Athletic Performance · Elite Package
         </div>
       </div>
-      <div class="review-slide">
+        <div class="review-slide">
         <div class="review-card">
           <div class="review-stars">★★★★★</div>
       <p class="review-text">More reviews coming soon. Join the One % Society and be the next transformation story on this wall.</p>
@@ -1717,12 +1713,14 @@ footer {
         </div>
       </div>
     </div>
-    <button class="rev-arrow rev-prev" onclick="changeReview(-1)">&#8249;</button>
-    <button class="rev-arrow rev-next" onclick="changeReview(1)">&#8250;</button>
+      </div>
+      <button class="rev-arrow rev-next" onclick="changeReview(1)">&#8250;</button>
+    </div>
     <div class="reviews-nav">
       <div class="reviews-dots" id="reviewDots"></div>
     </div>
-  </div>
+  </div>>
+
 </section>
 
 <!-- CTA -->
@@ -1750,14 +1748,7 @@ footer {
     <div class="footer-tag" style="text-align:right;">Nutrition Plans Available</div>
     <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--gold);letter-spacing:2px;">Online &amp; Add-On</div>
   </div>
-  <div>
-    
-    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:var(--gold);letter-spacing:2px;">
-  </div>
 </footer>
-
-
-
 
 <script>
   function toggleMenu() {
@@ -1774,33 +1765,6 @@ footer {
 
 <script>
   let currentSlide = 0;
-
-
-  // Reviews slideshow
-  let currentReview = 0;
-  const reviewSlides = document.querySelectorAll('.review-slide');
-  const dotsContainer = document.getElementById('reviewDots');
-
-  reviewSlides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'rev-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Review ' + (i+1));
-    dot.onclick = () => goToReview(i);
-    dotsContainer.appendChild(dot);
-  });
-
-  function goToReview(n) {
-    reviewSlides[currentReview].classList.remove('active');
-    dotsContainer.children[currentReview].classList.remove('active');
-    currentReview = (n + reviewSlides.length) % reviewSlides.length;
-    reviewSlides[currentReview].classList.add('active');
-    dotsContainer.children[currentReview].classList.add('active');
-  }
-
-  function changeReview(dir) { goToReview(currentReview + dir); }
-
-
-
   const slides = document.querySelectorAll('.slide');
   const dots = document.querySelectorAll('.dot');
   let autoTimer = setInterval(() => changeSlide(1), 4000);
@@ -1819,6 +1783,48 @@ footer {
     let next = (currentSlide + dir + slides.length) % slides.length;
     goToSlide(next);
   }
+</script>
+
+<script>
+  // Reviews carousel
+  var currentReview = 0;
+  var reviewSlides, dotsContainer;
+
+  function initReviews() {
+    reviewSlides = document.querySelectorAll('.reviews-track .review-slide');
+    dotsContainer = document.getElementById('reviewDots');
+    console.log('Reviews init: found ' + reviewSlides.length + ' slides');
+    if (dotsContainer) {
+      dotsContainer.innerHTML = '';
+      reviewSlides.forEach(function(_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'rev-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Review ' + (i + 1));
+        dot.onclick = function() { goToReview(i); };
+        dotsContainer.appendChild(dot);
+      });
+    }
+  }
+
+  function goToReview(n) {
+    if (!reviewSlides || reviewSlides.length === 0) return;
+    reviewSlides[currentReview].classList.remove('active');
+    if (dotsContainer && dotsContainer.children[currentReview]) {
+      dotsContainer.children[currentReview].classList.remove('active');
+    }
+    currentReview = ((n % reviewSlides.length) + reviewSlides.length) % reviewSlides.length;
+    reviewSlides[currentReview].classList.add('active');
+    if (dotsContainer && dotsContainer.children[currentReview]) {
+      dotsContainer.children[currentReview].classList.add('active');
+    }
+  }
+
+  function changeReview(dir) {
+    if (!reviewSlides) initReviews();
+    goToReview(currentReview + dir);
+  }
+
+  document.addEventListener('DOMContentLoaded', initReviews);
 </script>
 
 <!-- WHATSAPP FLOATING BUTTON -->
@@ -1847,10 +1853,7 @@ footer {
   transition:transform .2s, box-shadow .2s;
   position:relative;
 }
-.wa-btn:hover {
-  transform:scale(1.1);
-  box-shadow:0 6px 28px rgba(37,211,102,.6);
-}
+.wa-btn:hover { transform:scale(1.1); box-shadow:0 6px 28px rgba(37,211,102,.6); }
 .wa-btn svg { width:32px;height:32px;fill:#fff; }
 .wa-pulse {
   position:absolute;
@@ -1880,15 +1883,9 @@ footer {
   transition:all .25s;
   pointer-events:none;
 }
-.wa-float:hover .wa-tooltip {
-  opacity:1;
-  transform:translateX(0);
-}
+.wa-float:hover .wa-tooltip { opacity:1; transform:translateX(0); }
 .wa-tooltip strong { color:#25D366; display:block;font-size:.9rem; }
-@media(max-width:600px) {
-  .wa-float { bottom:20px;right:20px; }
-  .wa-tooltip { display:none; }
-}
+@media(max-width:600px) { .wa-float { bottom:20px;right:20px; } .wa-tooltip { display:none; } }
 </style>
 
 <div class="wa-float">
